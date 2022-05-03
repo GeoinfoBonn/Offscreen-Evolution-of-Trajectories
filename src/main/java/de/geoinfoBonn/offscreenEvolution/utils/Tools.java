@@ -46,7 +46,7 @@ import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.TransformException;
 
-import de.geoinfoBonn.graphLibrary.core.structures.Feature;
+import de.geoinfoBonn.offscreenEvolution.io.Feature;
 
 public class Tools {
 	private static final Logger LOGGER = Logger.getLogger(Tools.class.getName());

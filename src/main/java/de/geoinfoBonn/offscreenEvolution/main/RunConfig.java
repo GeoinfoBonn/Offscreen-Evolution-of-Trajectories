@@ -1,6 +1,7 @@
 package de.geoinfoBonn.offscreenEvolution.main;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -87,6 +88,14 @@ public class RunConfig {
 
 	public static RunConfig parseArguments(String[] args) {
 		RunConfigBuilder builder = RunConfig.builder();
+
+		if (Argument.containsOptionalArg(args, Argument.HELP)) {
+			Iterator<String> iter = Argument.iterator();
+			while (iter.hasNext()) {
+				System.out.println(Argument.getHelpText(iter.next()));
+			}
+			System.exit(0);
+		}
 
 		if (Argument.containsOptionalArg(args, Argument.BETA)) {
 			double beta = Double.parseDouble(Argument.getOptionalArg(args, Argument.BETA));

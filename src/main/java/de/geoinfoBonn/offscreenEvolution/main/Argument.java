@@ -31,9 +31,12 @@ public class Argument {
 		case HELP:
 			return argumentIdentifier + "\t" + "Prints a help text for this app.";
 		case TRACK:
-			return argumentIdentifier + "\t" + "Path to the trajectory shapefile (given in EPSG:xxx).";
+			return argumentIdentifier + "\t" + "Path to the trajectory shapefile (given in EPSG:25832).";
 		case FRAME_FILE:
-			return argumentIdentifier + "\t" + "Path to the frame shapefile (given in EPSG:xxx).";
+			return argumentIdentifier + "\t" + "Path to the frame shapefile (given in EPSG:3857).";
+		case FRAME_BOUNDS:
+			return argumentIdentifier + "\t"
+					+ "Coordinates of the bounding box of the visible map frame in the form `xMin,yMin,xMax,yMax` (given in EPSG:3857).";
 		case N:
 			return argumentIdentifier + "\t" + "Number of points to look ahead [-]. (NOT IMPLEMENTED YET!)";
 		case K:

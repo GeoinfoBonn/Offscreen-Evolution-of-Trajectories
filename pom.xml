@@ -58,18 +58,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>de.geoinfoBonn.graphLibrary</groupId>
-			<artifactId>gl-core</artifactId>
-			<version>${gl.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>de.geoinfoBonn.graphLibrary</groupId>
-			<artifactId>gl-io</artifactId>
-			<version>${gl.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-shapefile</artifactId>
 			<version>${gt.version}</version>
@@ -115,9 +103,8 @@
 							<goal>shade</goal>
 						</goals>
 						<configuration>
-							<finalName>OffscreenStudy</finalName>
-	                        <outputDirectory>/home/axel/eclipse-web-workspace/offscreenEvolution/src/main/webapp/experiments</outputDirectory>
-							<filters>
+							<finalName>OffscreenEvolution</finalName>
+	                        <filters>
 								<filter>
 									<artifact>*:*</artifact>
 									<excludes>

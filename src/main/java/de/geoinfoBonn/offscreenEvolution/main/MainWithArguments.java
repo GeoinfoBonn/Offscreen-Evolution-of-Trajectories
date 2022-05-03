@@ -13,11 +13,11 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 
-import de.geoinfoBonn.graphLibrary.core.structures.Feature;
-import de.geoinfoBonn.graphLibrary.io.shp.FeatureReader;
 import de.geoinfoBonn.offscreenEvolution.evolution.ComputeEvolution;
 import de.geoinfoBonn.offscreenEvolution.evolution.ComputeEvolution.Direction;
 import de.geoinfoBonn.offscreenEvolution.evolution.EvolutionSymbol;
+import de.geoinfoBonn.offscreenEvolution.io.Feature;
+import de.geoinfoBonn.offscreenEvolution.io.FeatureReader;
 import de.geoinfoBonn.offscreenEvolution.shapefinder.ShapePreparer.SignatureType;
 import de.geoinfoBonn.offscreenEvolution.tracks.Track;
 import de.geoinfoBonn.offscreenEvolution.tracks.TrackManager;
@@ -34,6 +34,9 @@ public class MainWithArguments {
 
 		RunConfig config = RunConfig.parseArguments(args);
 		config.logRunConfig();
+
+		if (!config.getOutputDir().exists())
+			config.getOutputDir().mkdirs();
 
 		// ################## read the trajectories from shapefile ##################
 		List<Track> tracks = Track.importFromShapefile(config.getTrackFile().getAbsolutePath(), config.getIdColumn(),
