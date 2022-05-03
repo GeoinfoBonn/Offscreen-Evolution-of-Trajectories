@@ -28,5 +28,5 @@ java -jar target/OffscreenEvolution.jar -in src/main/resources/tracks/allTracks.
 A list of all flags with a short description can be found by calling:
 
 ```sh
-java -jar target/OffscreenEvolution.jar -h`
+java -jar target/OffscreenEvolution.jar -h
 ```
